@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+
+    grid-template-columns: 1fr;
+    /* Fr is a fractional unit and 1fr is for 1 part of the available space */
+    grid-template-rows:
+      2rem /* Header */
+      minmax(0.5rem, auto) /* Nav */
+      1fr /* Content */
+      minmax(7.5rem, auto) /* Sidebar */
+      /* The minmax() CSS function defines a size range greater than or equal to min and less than or equal to max. */
+      auto; /* Footer */
+    gap: 1rem;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+header {
+    grid-area: header;
+    padding: 1rem;
+}
+
+nav {
+    grid-area: nav;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+main {
+    grid-area: main;
+}
+
+main p {
+    padding: 1rem;
+}
+
+aside {
+    grid-area: aside;
+}
+
+img {
+    width: 100%;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.Copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+}
+
+@media only screen and (min-width: 48rem) {
+    body {
+        grid-template-areas: 
+          "header header header"
+          "nav main aside"
+          "footer footer footer";
+        grid-template-columns: 20rem 1fr 20rem;
+        grid-template-rows: auto, 1fr, auto;
+        font-size: 1.6rem;
+    }
+
+
+}
